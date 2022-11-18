@@ -1,18 +1,20 @@
 struct Noeud
 {
     int nombre;
-    Noeud * next;
+    Noeud *next;
 };
 class Liste
 {
-    Noeud * tete;
+    Noeud *tete;
+    Noeud *queue;
+
 public:
     Liste()
     {
         tete = NULL;
     }
     void afficher();
-    void print_tete();
+    void print_extremites();
     void ajouter_debut();
     void ajouter_apres();
     void ajouter_avant();
