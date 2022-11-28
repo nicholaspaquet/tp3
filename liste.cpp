@@ -33,8 +33,6 @@ void Liste::ajouter_debut(Noeud personne)
     ajout->nom = personne.nom;
     ajout->argent = personne.argent;
 
-    // ajout->nombre = nombre;
-
     if (tete == NULL) // Si tete est NULL, il n'y a donc aucun noeuds
     {
         ajout->next = tete;
@@ -52,6 +50,9 @@ void Liste::ajouter_debut(Noeud personne)
 }
 void Liste::ajouter_fin(Noeud personne)
 {
+    // Cette fonction permet d'ajouter un Noeud à la fin de la liste. Si la liste est vide, un
+    // Noeud sera ajouté au début, sinon, le Noeud ajouté sera le dernier élément de la liste
+    // et deviendra la queue.
     Noeud *ajout;
     ajout = new Noeud;
 
@@ -61,18 +62,16 @@ void Liste::ajouter_fin(Noeud personne)
 
     if (tete == NULL) // Si tete est NULL, il n'y a donc aucun noeud
     {
-        ajout->next = tete;
-        tete = ajout;
-        // Maintenant qu'il y a un noeud, forcément la tete et la queue sont identiques
-        queue = tete;
+        // S'il n'y a pas de tête, il faut commencer par rajouter un premier Noeud.
+        // Je rajoute donc une nouvelle personne au début de la liste.
+        ajouter_debut(personne);
     }
     else
     {
-        Noeud *tempo;
-        tempo = ajout;
-        ajout = queue;
-        queue = tempo;
-        ajout->next = queue;
+        queue->next = ajout; // Je place l'adresse d'ajout ici de façon temporaire
+        ajout = queue;       // queue va prendre l'adresse d'ajout
+        queue = queue->next; // L'adresse du Noeud ajouté sera maintenant la queue.
+        queue->next = NULL;  // queue->next va toujours pointer sur NULL
     }
 }
 void Liste::inserer_apres_numero()
@@ -259,9 +258,9 @@ void Liste::afficher()
         {
             cout << left << setw(30) << iterateur->nombre << setw(30) << iterateur->nom
                  << iterateur->argent << endl;
-            // cout << left << setw(20) << "Adresse" << setw(20) << iterateur << setw(20)
-            //      << "Adresse next" << setw(20) << iterateur->next << setw(20)
-            //      << iterateur->nombre << endl;
+            cout << left << setw(20) << "Adresse" << setw(20) << iterateur << setw(20)
+                 << "Adresse next" << setw(20) << iterateur->next << setw(20)
+                 << iterateur->nombre << endl;
             iterateur = iterateur->next;
             i++;
         }
