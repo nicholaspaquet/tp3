@@ -20,48 +20,84 @@ int main()
     cout << "\n\t0 pour quitter\n\n";
     cout << "\t\tFaire un choix : ";
     cin >> choix;
+    cout << endl;
 
     while (choix != 0)
     {
-        cout << endl;
-        int nombre;
-
         switch (choix)
         {
         case 1:
-            for (int i = 0; i < 2; i++)
-            {
-                personne = liste_noeud.ajouter_personne();
-                // cout << "Entrer un nombre a inserer au debut de la liste : ";
-                // cin >> nombre;
-                liste_noeud.ajouter_debut(personne);
-            }
-            break;
         case 2:
             personne = liste_noeud.ajouter_personne();
-            liste_noeud.ajouter_fin(personne);
+            if (choix) // Si choix == 1, ajouter au début
+                liste_noeud.ajouter_debut(personne);
+            else // Si choix == 2, ajouter à la fin
+                liste_noeud.ajouter_fin(personne);
             break;
         case 3:
-            liste_noeud.inserer_apres_numero();
-            break;
         case 4:
-            liste_noeud.inserer_avant_chaque_numero();
+            if (liste_noeud.get_tete())
+            {
+                int nombre;
+                bool nombre_trouve = false;
+
+                cout << "Entrez le nombre a recherche : ";
+                cin >> nombre;
+                if (choix == 3)
+                {
+                    nombre_trouve = liste_noeud.inserer_apres_numero(nombre);
+                }
+                else
+                {
+                    nombre_trouve = liste_noeud.inserer_avant_chaque_numero(nombre);
+                }
+                if (!nombre_trouve)
+                {
+                    cout << "Le nombre ne se trouve pas dans la liste.\n";
+                }
+            }
             break;
         case 5:
-            liste_noeud.supprimer_personne();
+            if (liste_noeud.get_tete())
+            {
+                cout << "Nom de la personne a supprimer de la liste : ";
+                string nom;
+                cin.ignore();
+                getline(cin, nom);
+
+                if (liste_noeud.supprimer_personne(nom))
+                    cout << "Le Noeud a ete supprime.\n";
+                else
+                    cout << "Le nom ne se trouve pas dans la liste.\n";
+            }
             break;
         case 6:
-            liste_noeud.moyenne_argent();
+            if (liste_noeud.get_tete())
+            {
+                cout << "La moyenne d'argent en banque de toutes les personnes de la liste est : "
+                     << liste_noeud.moyenne_argent() << endl;
+            }
             break;
         case 7:
-            liste_noeud.afficher();
+            if (liste_noeud.get_tete())
+            {
+                liste_noeud.afficher();
+            }
             break;
         case 8:
-            liste_noeud.supprimer_liste();
+            if (liste_noeud.get_tete())
+            {
+                liste_noeud.supprimer_liste();
+                cout << "La liste a ete supprime.\n";
+            }
             break;
         case 9:
             liste_noeud.print_extremites();
             break;
+        }
+        if (!liste_noeud.get_tete())
+        {
+            cout << "La liste est vide.\n";
         }
         cout << "\n\t1. Ajouter au debut\n";
         cout << "\t2. Ajouter a la fin\n";
@@ -77,4 +113,8 @@ int main()
         cout << endl;
     }
     cout << "Fin\n";
+}
+Noeud *Liste::get_tete()
+{
+    return tete;
 }
