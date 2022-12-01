@@ -1,10 +1,18 @@
-struct Noeud
-{
-    int nombre;
-    std::string nom;
-    float argent;
-    Noeud *next;
-};
+/***************************************************************************************************
+ *                                                                                                 *
+ *       Titre :                   Orienté objet - Travail pratique 3                              *
+ *       Auteur :                  Nicholas Paquet                                                 *
+ *       Date de création :        23 novembre 2022                                                *
+ *       Dernière modification :   01 décembre 2022                                                *
+ *       Date de remise :          02 décembre 2022                                                *
+ *       But :                     Le but de ce travail pratique est d'appliquer la matière vu     *
+ *                                 en classe pour les listes chainées par l'entremise de           *
+ *                                 plusieurs manipulations sur les noeuds d'une liste.             *                                               *
+ *                                                                                                 *
+ ***************************************************************************************************/
+
+// Dans mon header, je fais les prototypages qui seront nécessaires pour une classe Liste.
+
 class Liste
 {
     Noeud *tete;
@@ -22,5 +30,12 @@ public:
     float moyenne_argent();
     void afficher();
     void supprimer_liste();
-    void print_extremites();
+};
+// Je déclare également une struct Noeud qui sera utilisé par cette classe.
+struct Noeud
+{
+    int nombre;
+    std::string nom;
+    float argent;
+    Noeud *next;
 };

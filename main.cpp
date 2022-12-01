@@ -1,3 +1,16 @@
+/***************************************************************************************************
+ *                                                                                                 *
+ *       Titre :                   Orienté objet - Travail pratique 3                              *
+ *       Auteur :                  Nicholas Paquet                                                 *
+ *       Date de création :        23 novembre 2022                                                *
+ *       Dernière modification :   01 décembre 2022                                                *
+ *       Date de remise :          02 décembre 2022                                                *
+ *       But :                     Le but de ce travail pratique est d'appliquer la matière vu     *
+ *                                 en classe pour les listes chainées par l'entremise de           *
+ *                                 plusieurs manipulations sur les noeuds d'une liste.             *                                               *
+ *                                                                                                 *
+ ***************************************************************************************************/
+
 #include <iostream>
 #include "liste.h"
 
@@ -91,9 +104,6 @@ int main()
                 cout << "La liste a ete supprime.\n";
             }
             break;
-        case 9:
-            liste_noeud.print_extremites();
-            break;
         }
         if (!liste_noeud.get_tete())
         {
@@ -113,8 +123,4 @@ int main()
         cout << endl;
     }
     cout << "Fin\n";
-}
-Noeud *Liste::get_tete()
-{
-    return tete;
 }

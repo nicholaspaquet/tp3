@@ -1,3 +1,18 @@
+/***************************************************************************************************
+ *                                                                                                 *
+ *       Titre :                   Orienté objet - Travail pratique 3                              *
+ *       Auteur :                  Nicholas Paquet                                                 *
+ *       Date de création :        23 novembre 2022                                                *
+ *       Dernière modification :   01 décembre 2022                                                *
+ *       Date de remise :          02 décembre 2022                                                *
+ *       But :                     Le but de ce travail pratique est d'appliquer la matière vu     *
+ *                                 en classe pour les listes chainées par l'entremise de           *
+ *                                 plusieurs manipulations sur les noeuds d'une liste.             *                                               *
+ *                                                                                                 *
+ ***************************************************************************************************/
+
+// Dans ce fichier source, je définis la classe Liste ainsi que toutes ses fonctions.
+
 #include <iostream>
 #include "liste.h"
 #include <iomanip>
@@ -8,6 +23,10 @@ using namespace std;
 Liste::Liste()
 {
     tete = NULL;
+}
+Noeud *Liste::get_tete()
+{
+    return tete;
 }
 Noeud Liste::ajouter_personne()
 {
@@ -280,13 +299,4 @@ void Liste::supprimer_liste()
         // L'itérateur devient la tête de nouveau et on répète
         iterateur = tete;
     }
-}
-void Liste::print_extremites()
-{
-    cout << "L'adresse de la tete est  : " << tete << endl;
-    cout << "L'adresse de la queue est : " << queue << endl;
-
-    // cout << left << setw(20) << "Adresse" << setw(20) << iterateur << setw(20)
-    //      << "Adresse next" << setw(20) << iterateur->next << setw(20)
-    //      << iterateur->nombre << endl;
 }
