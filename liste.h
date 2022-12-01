@@ -13,6 +13,14 @@
 
 // Dans mon header, je fais les prototypages qui seront nécessaires pour une classe Liste.
 
+// Je déclare également une struct Noeud qui sera utilisé par cette classe.
+struct Noeud
+{
+    int nombre;
+    std::string nom;
+    float argent;
+    Noeud *next;
+};
 class Liste
 {
     Noeud *tete;
@@ -30,12 +38,4 @@ public:
     float moyenne_argent();
     void afficher();
     void supprimer_liste();
-};
-// Je déclare également une struct Noeud qui sera utilisé par cette classe.
-struct Noeud
-{
-    int nombre;
-    std::string nom;
-    float argent;
-    Noeud *next;
 };

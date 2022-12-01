@@ -13,8 +13,11 @@
 
 #include <iostream>
 #include "liste.h"
+#include <string>
 
 using namespace std;
+
+void efface_ecran();
 
 int main()
 {
@@ -37,15 +40,22 @@ int main()
 
     while (choix != 0)
     {
+        efface_ecran();
         switch (choix)
         {
         case 1:
         case 2:
             personne = liste_noeud.ajouter_personne();
             if (choix) // Si choix == 1, ajouter au début
+            {
                 liste_noeud.ajouter_debut(personne);
+                cin.ignore();
+            }
             else // Si choix == 2, ajouter à la fin
+            {
+                cin.ignore();
                 liste_noeud.ajouter_fin(personne);
+            }
             break;
         case 3:
         case 4:
@@ -109,6 +119,7 @@ int main()
         {
             cout << "La liste est vide.\n";
         }
+        efface_ecran();
         cout << "\n\t1. Ajouter au debut\n";
         cout << "\t2. Ajouter a la fin\n";
         cout << "\t3. Inserer apres un numero\n";
@@ -123,4 +134,10 @@ int main()
         cout << endl;
     }
     cout << "Fin\n";
+}
+void efface_ecran()
+{
+    cout << "\nAppuyez sur entree pour retourner au menu.\n";
+    cin.ignore();
+    system("cls");
 }
