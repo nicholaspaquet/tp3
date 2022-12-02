@@ -1,15 +1,6 @@
-/***************************************************************************************************
- *                                                                                                 *
- *       Titre :                   Orienté objet - Travail pratique 3                              *
- *       Auteur :                  Nicholas Paquet                                                 *
- *       Date de création :        23 novembre 2022                                                *
- *       Dernière modification :   01 décembre 2022                                                *
- *       Date de remise :          02 décembre 2022                                                *
- *       But :                     Le but de ce travail pratique est d'appliquer la matière vu     *
- *                                 en classe pour les listes chainées par l'entremise de           *
- *                                 plusieurs manipulations sur les noeuds d'une liste.             *
- *                                                                                                 *
- ***************************************************************************************************/
+// Nicholas Paquet
+// Travail pratique 3
+// Fichier source "main.cpp"
 
 #include <iostream>
 #include "liste.h"
@@ -46,12 +37,13 @@ int main()
         case 1:
         case 2:
             personne = liste_noeud.ajouter_personne();
-            if (choix == 1) // Si choix == 1, ajouter au début
+
+            if (choix == 1)
             {
                 liste_noeud.ajouter_debut(personne);
                 cin.ignore();
             }
-            else // Si choix == 2, ajouter à la fin
+            else
             {
                 liste_noeud.ajouter_fin(personne);
                 cin.ignore();

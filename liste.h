@@ -1,19 +1,7 @@
-/***************************************************************************************************
- *                                                                                                 *
- *       Titre :                   Orienté objet - Travail pratique 3                              *
- *       Auteur :                  Nicholas Paquet                                                 *
- *       Date de création :        23 novembre 2022                                                *
- *       Dernière modification :   01 décembre 2022                                                *
- *       Date de remise :          02 décembre 2022                                                *
- *       But :                     Le but de ce travail pratique est d'appliquer la matière vu     *
- *                                 en classe pour les listes chainées par l'entremise de           *
- *                                 plusieurs manipulations sur les noeuds d'une liste.             *
- *                                                                                                 *
- ***************************************************************************************************/
+// Nicholas Paquet
+// Travail pratique 3
+// Fichier header "liste.h"
 
-// Dans mon header, je fais les prototypages qui seront nécessaires pour une classe Liste.
-
-// Je déclare également une struct Noeud qui sera utilisé par cette classe.
 struct Noeud
 {
     int nombre;
@@ -21,6 +9,7 @@ struct Noeud
     float argent;
     Noeud *next;
 };
+
 class Liste
 {
     Noeud *tete;
