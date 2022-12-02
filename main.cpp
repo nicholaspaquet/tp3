@@ -7,7 +7,7 @@
  *       Date de remise :          02 décembre 2022                                                *
  *       But :                     Le but de ce travail pratique est d'appliquer la matière vu     *
  *                                 en classe pour les listes chainées par l'entremise de           *
- *                                 plusieurs manipulations sur les noeuds d'une liste.             *                                               *
+ *                                 plusieurs manipulations sur les noeuds d'une liste.             *
  *                                                                                                 *
  ***************************************************************************************************/
 
@@ -46,15 +46,15 @@ int main()
         case 1:
         case 2:
             personne = liste_noeud.ajouter_personne();
-            if (choix) // Si choix == 1, ajouter au début
+            if (choix == 1) // Si choix == 1, ajouter au début
             {
                 liste_noeud.ajouter_debut(personne);
                 cin.ignore();
             }
             else // Si choix == 2, ajouter à la fin
             {
-                cin.ignore();
                 liste_noeud.ajouter_fin(personne);
+                cin.ignore();
             }
             break;
         case 3:
@@ -85,8 +85,8 @@ int main()
             {
                 cout << "Nom de la personne a supprimer de la liste : ";
                 string nom;
-                cin.ignore();
                 getline(cin, nom);
+                cout << "afficher nom : " << nom << endl;
 
                 if (liste_noeud.supprimer_personne(nom))
                     cout << "Le Noeud a ete supprime.\n";

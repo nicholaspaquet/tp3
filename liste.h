@@ -7,7 +7,7 @@
  *       Date de remise :          02 décembre 2022                                                *
  *       But :                     Le but de ce travail pratique est d'appliquer la matière vu     *
  *                                 en classe pour les listes chainées par l'entremise de           *
- *                                 plusieurs manipulations sur les noeuds d'une liste.             *                                               *
+ *                                 plusieurs manipulations sur les noeuds d'une liste.             *
  *                                                                                                 *
  ***************************************************************************************************/
 
