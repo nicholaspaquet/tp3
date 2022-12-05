@@ -215,7 +215,6 @@ bool Liste::supprimer_personne(string nom_recherche)
     noeud_precedent = NULL;
 
     // Boucle tant qu'on atteint pas la fin de la liste ou que le nom n'est pas trouvé
-    cout << "nom recherche : " << nom_recherche << endl;
     while (position_liste != NULL && position_liste->nom != nom_recherche)
     {
         // On garde en mémoire le Noeud précédent, va servir si on a besoin de supprimer un Noeud
