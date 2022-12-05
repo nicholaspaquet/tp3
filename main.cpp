@@ -25,11 +25,12 @@ int main()
     Noeud personne;
 
     int choix;
+    cout << "Travail pratique 3 - liste chainee\n";
     cout << "\n\t1. Ajouter au debut\n";
     cout << "\t2. Ajouter a la fin\n";
     cout << "\t3. Inserer apres un numero\n";
     cout << "\t4. Inserer devant chaque numero\n";
-    cout << "\t5. Supprimer personne\n";
+    cout << "\t5. Supprimer une personne\n";
     cout << "\t6. Afficher moyenne d'argent\n";
     cout << "\t7. Afficher la liste\n";
     cout << "\t8. Supprimer la liste\n";
@@ -44,18 +45,16 @@ int main()
         switch (choix)
         {
         case 1:
-        case 2:
+            cout << "Ajouter au debut\n";
             personne = liste_noeud.ajouter_personne();
-            if (choix == 1) // Si choix == 1, ajouter au début
-            {
-                liste_noeud.ajouter_debut(personne);
-                cin.ignore();
-            }
-            else // Si choix == 2, ajouter à la fin
-            {
-                liste_noeud.ajouter_fin(personne);
-                cin.ignore();
-            }
+            liste_noeud.ajouter_debut(personne);
+            cin.ignore();
+            break;
+        case 2:
+            cout << "Ajouter a la fin\n";
+            personne = liste_noeud.ajouter_personne();
+            liste_noeud.ajouter_fin(personne);
+            cin.ignore();
             break;
         case 3:
         case 4:
@@ -64,14 +63,18 @@ int main()
                 int nombre;
                 bool nombre_trouve = false;
 
-                cout << "Entrez le nombre a recherche : ";
-                cin >> nombre;
                 if (choix == 3)
                 {
+                    cout << "Inserer apres un numero\n";
+                    cout << "Entrez le nombre a recherche : ";
+                    cin >> nombre;
                     nombre_trouve = liste_noeud.inserer_apres_numero(nombre);
                 }
                 else
                 {
+                    cout << "Inserer devant chaque numero\n";
+                    cout << "Entrez le nombre a recherche : ";
+                    cin >> nombre;
                     nombre_trouve = liste_noeud.inserer_avant_chaque_numero(nombre);
                 }
                 if (!nombre_trouve)
@@ -83,10 +86,10 @@ int main()
         case 5:
             if (liste_noeud.get_tete())
             {
+                cout << "Supprimer une personne\n";
                 cout << "Nom de la personne a supprimer de la liste : ";
                 string nom;
                 getline(cin, nom);
-                cout << "afficher nom : " << nom << endl;
 
                 if (liste_noeud.supprimer_personne(nom))
                     cout << "Le Noeud a ete supprime.\n";
@@ -97,6 +100,7 @@ int main()
         case 6:
             if (liste_noeud.get_tete())
             {
+                cout << "Afficher moyenne d'argent\n";
                 cout << "La moyenne d'argent en banque de toutes les personnes de la liste est : "
                      << liste_noeud.moyenne_argent() << endl;
             }
@@ -104,12 +108,14 @@ int main()
         case 7:
             if (liste_noeud.get_tete())
             {
+                cout << "Afficher la liste\n";
                 liste_noeud.afficher();
             }
             break;
         case 8:
             if (liste_noeud.get_tete())
             {
+                cout << "Supprimer la liste\n";
                 liste_noeud.supprimer_liste();
                 cout << "La liste a ete supprime.\n";
             }
@@ -120,6 +126,7 @@ int main()
             cout << "La liste est vide.\n";
         }
         efface_ecran();
+        cout << "Travail pratique 3 - liste chainee\n";
         cout << "\n\t1. Ajouter au debut\n";
         cout << "\t2. Ajouter a la fin\n";
         cout << "\t3. Inserer apres un numero\n";

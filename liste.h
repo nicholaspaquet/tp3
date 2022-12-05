@@ -14,6 +14,7 @@
 // Dans mon header, je fais les prototypages qui seront nécessaires pour une classe Liste.
 
 // Je déclare également une struct Noeud qui sera utilisé par cette classe.
+
 struct Noeud
 {
     int nombre;
@@ -21,6 +22,7 @@ struct Noeud
     float argent;
     Noeud *next;
 };
+
 class Liste
 {
     Noeud *tete;

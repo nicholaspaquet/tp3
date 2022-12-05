@@ -24,10 +24,12 @@ Liste::Liste()
 {
     tete = NULL;
 }
+
 Noeud *Liste::get_tete()
 {
     return tete;
 }
+
 Noeud Liste::ajouter_personne()
 {
     // Fonction permettant d'ajouter une nouvelle personne dans la liste. Évite d'avoir à copier-
@@ -45,6 +47,7 @@ Noeud Liste::ajouter_personne()
 
     return personne;
 }
+
 void Liste::ajouter_debut(Noeud personne)
 {
     // Fonction permettant d'ajouter un Noeud au début de la liste,
@@ -70,6 +73,7 @@ void Liste::ajouter_debut(Noeud personne)
         tete = ajout;
     }
 }
+
 void Liste::ajouter_fin(Noeud personne)
 {
     // Cette fonction permet d'ajouter un Noeud à la fin de la liste. Si la liste est vide, un
@@ -96,6 +100,7 @@ void Liste::ajouter_fin(Noeud personne)
         queue->next = NULL;  // queue->next va toujours pointer sur NULL
     }
 }
+
 bool Liste::inserer_apres_numero(int nombre_recherche)
 {
     // Cette fonction permet à l'utilisateur de rechercher par leur numéro, une personne dans la
@@ -141,6 +146,7 @@ bool Liste::inserer_apres_numero(int nombre_recherche)
         return true;
     }
 }
+
 bool Liste::inserer_avant_chaque_numero(int nombre_recherche)
 {
     // Cette fonction permet également à l'utilisateur de recherché une personne par son nombre.
@@ -199,6 +205,7 @@ bool Liste::inserer_avant_chaque_numero(int nombre_recherche)
         return true;
     }
 }
+
 bool Liste::supprimer_personne(string nom_recherche)
 {
     // Cette fonction permet de supprimer une personne de la liste, donc supprimer un Noeud.
@@ -245,6 +252,7 @@ bool Liste::supprimer_personne(string nom_recherche)
         return false;
     }
 }
+
 float Liste::moyenne_argent()
 {
     // Fonction qui calcule la moyenne en argent de toutes les personnes de la liste.
@@ -265,6 +273,7 @@ float Liste::moyenne_argent()
     }
     return 0;
 }
+
 void Liste::afficher()
 {
     // Fonction qui affiche à l'écran tous les Noeuds de la liste.
@@ -285,6 +294,7 @@ void Liste::afficher()
         }
     }
 }
+
 void Liste::supprimer_liste()
 {
     // Fonction permettant de supprimer une liste en la supprimant noeud par noeud
